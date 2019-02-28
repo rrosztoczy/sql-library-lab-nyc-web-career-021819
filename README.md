@@ -51,3 +51,11 @@ In `spec/querying_spec.rb`, complete the tests by writing the appropriate querie
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sql-library-lab' title='SQL Fantasy Library'>SQL Fantasy Library</a> on Learn.co and start learning to code for free.</p>
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/sql-library-lab'>SQL Library Lab</a> on Learn.co and start learning to code for free.</p>
+
+
+  "SELECT series.title, COUNT(characters.species) as species_count
+  FROM series
+  JOIN characters ON characters.series_id = series.id
+  WHERE characters.species = 'human'
+  GROUP BY series.title
+  ORDER BY species_count DESC LIMIT 1"
